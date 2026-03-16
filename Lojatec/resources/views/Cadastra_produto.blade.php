@@ -12,8 +12,14 @@
         <label for="nome">Nome do produto</label>
         <input type="text" name="nome" id="nome">
         <br>
+        <label for="descricao">Descrição de produto</label>
+        <input type="text" name="descricao" id="descricao">
+        <br>
         <label for="preco">Preço do produto</label>
         <input type="numerico" name="preco" id="preco">
+        <br>
+        <label for="quantidade">Quantidade de produto</label>
+        <input type="numerico" name="quantidade" id="quantidade">
         <br>
         <label for="data">Data validade</label>
         <input type="data" name="data" id="data">
