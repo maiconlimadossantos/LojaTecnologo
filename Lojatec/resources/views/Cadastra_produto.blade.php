@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="POST">
+    <form action="{{route('produto.create')}}" method="POST">
         @csrf
         <label for="nome">Nome do produto</label>
         <input type="text" name="nome" id="nome">
