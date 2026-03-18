@@ -6,10 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+<<<<<<< HEAD
     <script src="https://cdn.tailwindcss.com"></script>
 <body class="bg-slate-900 text-white p-10">
     <div class="max-w-lg mx-auto bg-slate-800 p-8 rounded-xl shadow-2xl border border-slate-700">
         <h2 class="text-2xl font-bold mb-6 text-blue-400"> Cadastrar Novo Item</h2>
+=======
+<body>
+    <form action="{{route('produto.create')}}" method="POST">
+        @csrf
+        <label for="nome">Nome do produto</label>
+        <input type="text" name="nome" id="nome">
+        <br>
+        <label for="descricao">Descrição de produto</label>
+        <input type="text" name="descricao" id="descricao">
+        <br>
+        <label for="preco">Preço do produto</label>
+        <input type="numerico" name="preco" id="preco">
+        <br>
+        <label for="quantidade">Quantidade de produto</label>
+        <input type="numerico" name="quantidade" id="quantidade">
+        <br>
+        <label for="data">Data validade</label>
+        <input type="data" name="data" id="data">
+        <br>
+>>>>>>> 1b2e9b83cd8680502b77a760110cdc2347cd04b1
 
         <form action="{{ route('produtos.store') }}" method="POST" class="space-y-4">
             @csrf
