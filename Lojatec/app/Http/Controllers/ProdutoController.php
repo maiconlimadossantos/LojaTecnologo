@@ -10,14 +10,14 @@ class ProdutoController extends Controller
     // Lista todos os produtos
     public function index()
     {
-        $produtos = ProdutoModel::all();
-        return view('produtos.index', compact('produtos'));
+        return view('Cadastra_produto');
     }
 
     // Abre o formulário de criação
     public function create()
     {
-        return view('produtos.create');
+       $produtos = ProdutoModel::all();
+        return view('Cadastra_produto', compact('produtos'));
     }
 
     // Salva o produto no banco
@@ -31,21 +31,21 @@ class ProdutoController extends Controller
         $produto->data_de_validade = $request->input('data_de_validade');
         $produto->save();
 
-        return redirect()->route('produtos.index')->with('success', 'Produto cadastrado!');
+        return redirect()->route('Cadastra_produto')->with('success', 'Produto cadastrado!');
     }
 
     // Mostra um produto específico
     public function show($id)
     {
         $produto = ProdutoModel::findOrFail($id);
-        return view('produtos.show', compact('produto'));
+        return view('Listar_produto', compact('produto'));
     }
 
     // Abre o formulário de edição
     public function edit($id)
     {
         $produto = ProdutoModel::findOrFail($id);
-        return view('produtos.edit', compact('produto'));
+        return view('Editar_produto', compact('produto'));
     }
 
     // Atualiza o produto
@@ -59,7 +59,7 @@ class ProdutoController extends Controller
         $produto->data_de_validade = $request->input('data_de_validade');
         $produto->save();
 
-        return redirect()->route('produtos.index')->with('success', 'Produto atualizado!');
+        return redirect()->route('Cadastra_produto')->with('success', 'Produto atualizado!');
     }
 
     // Deleta o produto
@@ -68,6 +68,6 @@ class ProdutoController extends Controller
         $produto = ProdutoModel::findOrFail($id);
         $produto->delete();
 
-        return redirect()->route('produtos.index')->with('success', 'Produto removido!');
+        return redirect()->route('Listar_produto')->with('success', 'Produto removido!');
     }
 }

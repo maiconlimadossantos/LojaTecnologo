@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Models;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,5 +15,5 @@ class ProdutoModel extends Model
         'quantidade',
         'data_de_validade',
     ];
-   
+
 }

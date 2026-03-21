@@ -40,15 +40,13 @@
             </div>
 
             {{-- Usando o componente que você criou ou um botão padrão --}}
-            @if(View::exists('components.botaoSalvar'))
-                <x-botaoSalvar> Salvar no Inventário </x-botaoSalvar>
-            @else
+
                 <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 transition p-3 rounded-lg font-bold uppercase tracking-wider shadow-lg">
                     Salvar no Inventário
                 </button>
-            @endif
 
-            <a href="{{ route('produtos.index') }}" class="block text-center text-slate-400 text-sm hover:underline mt-4">Voltar para a lista</a>
+
+            <a href="{{ route('produtos.show') }}" class="block text-center text-slate-400 text-sm hover:underline mt-4">Voltar para a lista</a>
         </form>
     </div>
 </body>
