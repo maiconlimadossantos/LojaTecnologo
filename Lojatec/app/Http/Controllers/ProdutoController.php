@@ -70,4 +70,5 @@ class ProdutoController extends Controller
 
         return redirect()->route('Listar_produto')->with('success', 'Produto removido!');
     }
+
 }
