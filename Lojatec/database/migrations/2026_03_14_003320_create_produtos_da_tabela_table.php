@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('descricao');
             $table->decimal('preco');
             $table->integer('quantidade');
-            $table->data('data_de_validade');
+            $table->date('validade');
             $table->timestamps();
         });
     }

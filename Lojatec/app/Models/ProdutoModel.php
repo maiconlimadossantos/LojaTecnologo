@@ -13,7 +13,7 @@ class ProdutoModel extends Model
         'descricao',
         'preco',
         'quantidade',
-        'data_de_validade',
+        'validade',
     ];
 
 }

@@ -36,7 +36,7 @@
 
             <div>
                 <label class="block text-sm font-medium text-slate-300">Data de Validade / Garantia</label>
-                <input type="date" name="data_de_validade" class="w-full bg-slate-700 border-none rounded p-2 focus:ring-2 focus:ring-blue-500 outline-none">
+                <input type="date" name="data-de-validade" class="w-full bg-slate-700 border-none rounded p-2 focus:ring-2 focus:ring-blue-500 outline-none">
             </div>
 
             {{-- Usando o componente que você criou ou um botão padrão --}}

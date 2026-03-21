@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ProdutoModel;
+use Exception;
 use Illuminate\Http\Request;
 
 class ProdutoController extends Controller
@@ -17,28 +18,30 @@ class ProdutoController extends Controller
     public function create()
     {
        $produtos = ProdutoModel::all();
+
         return view('Cadastra_produto', compact('produtos'));
     }
 
     // Salva o produto no banco
     public function store(Request $request)
     {
-        $produto = new ProdutoModel();
-        $produto->nome = $request->input('nome');
-        $produto->descricao = $request->input('descricao');
-        $produto->preco = $request->input('preco');
-        $produto->quantidade = $request->input('quantidade');
-        $produto->data_de_validade = $request->input('data_de_validade');
-        $produto->save();
-
+        $db = new ProdutoModel();
+        $db->nome = $request->input('nome');
+        $db->descricao = $request->input('descricao');
+        $db->preco = $request->input('preco');
+        $db->quantidade = $request->input('quantidade');
+        $db->validade = $request->input('data_de_validade');
+        $db->save();
+// echo"$request->input('data_de_validade')";
+// var_dump($request->input('data-de-validade'));
         return redirect()->route('Cadastra_produto')->with('success', 'Produto cadastrado!');
     }
 
     // Mostra um produto específico
-    public function show($id)
+    public function show()
     {
-        $produto = ProdutoModel::findOrFail($id);
-        return view('Listar_produto', compact('produto'));
+       $db = ProdutoModel::all();
+        return view('Listar_produto', compact('produtos'));
     }
 
     // Abre o formulário de edição
